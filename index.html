@@ -24,14 +24,9 @@
     <!-- Page Loader -->
     <div id="loader-wrapper">
       <div id="loader"></div>
-
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
-
-    <!-- Site logo -->
-
-    <!-- Nav -->
     <nav class="tm-nav">
       <button
         class="navbar-toggler"
@@ -52,11 +47,9 @@
         <li class="nav-item">
           <a href="#marketing" class="nav-link"> Marketing </a>
         </li>
-
         <li class="nav-item">
           <a href="#movie" class="nav-link"> Movie </a>
         </li>
-
         <li class="nav-item">
           <a href="#trailer" class="nav-link"> Trailer </a>
         </li>
@@ -65,11 +58,8 @@
         </li>
       </ul>
     </nav>
-
-    <!-- Content -->
     <main>
       <div id="barbieIntro" class="tm-section">
-        <!-- Intro left -->
         <div class="tm-section-col tm-content">
           <div class="tm-media">
             <img
@@ -93,7 +83,6 @@
               <hr class="tm-hr tm-mr" />
             </div>
           </div>
-
           <div class="tm-media">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mattel_%282019%29.svg/225px-Mattel_%282019%29.svg.png"
@@ -118,7 +107,6 @@
               <hr class="tm-hr tm-mr" />
             </div>
           </div>
-
           <div class="tm-media">
             <img
               src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/03/08/17/1960s-ruth-handler-dolls-002.png"
@@ -146,16 +134,12 @@
             <a href="#marketing" class="tm-btn tm-btn-next">Next page</a>
           </div>
         </div>
-
-        <!-- marketing right -->
         <div
           class="tm-section-col tm-parallax"
           data-parallax="scroll"
           data-image-src="https://www.themoviedb.org/t/p/original/bW0gPbSRXdXqKRNgeHbXsQ3iZP3.jpg"
         ></div>
       </div>
-      <!-- #marketing -->
-
       <div id="marketing" class="tm-section">
         <div class="tm-section-col tm-content">
           <h2 class="tm-text-primary">Why are Barbie dolls so famous?</h2>
@@ -164,7 +148,6 @@
             to market the Barbie doll. No other doll maker has come close to
             her. Barbie has been seen on TV commercials since the early 1960's.
           </p>
-
           <hr class="tm-hr tm-ml tm-sm-mt-10" />
           <iframe
             width="560"
@@ -186,16 +169,13 @@
             <a href="#movie" class="tm-btn tm-btn-next">Next page</a>
           </div>
         </div>
-
         <div
           class="tm-section-col tm-parallax"
           data-parallax="scroll"
           data-image-src="https://img.freepik.com/free-photo/cute-girl-doll-ai-generated_23-2150651768.jpg?size=626&ext=jpg&uid=R77138766&ga=GA1.2.1325207421.1644168259&semt=sph"
         ></div>
       </div>
-
       <div id="movie" class="tm-section">
-        <!-- #movie left -->
         <div class="tm-section-col tm-content tm-content-small">
           <h2 class="tm-text-primary">Barbie Movie (2023)</h2>
           <p>
@@ -222,8 +202,6 @@
             <a href="#trailer" class="tm-btn tm-btn-next">Watch Trailer</a>
           </div>
         </div>
-
-        <!-- #movie right -->
         <div
           class="tm-section-col tm-parallax"
           data-parallax="scroll"
@@ -231,10 +209,7 @@
           width="10px"
         ></div>
       </div>
-      <!-- #trailer -->
-
       <div id="trailer" class="tm-section">
-        <!-- #trailer left -->
         <div class="tm-section-col tm-content tm-content-small">
           <h2 class="tm-text-primary">Watch Trailer</h2>
           <iframe
@@ -246,7 +221,6 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-
           <div>
             <span><strong>Barbie | Main Trailer</strong></span>
             <p id="barbiefooter">
@@ -255,11 +229,8 @@
               Ken.
             </p>
           </div>
-
           <footer class="tm-copyright tm-text-small"></footer>
         </div>
-
-        <!-- right -->
         <div
           class="tm-section-col tm-parallax tm-relative"
           data-parallax="scroll"
@@ -700,124 +671,79 @@
     <script>
       $(window).on("load", function () {
         $("body").addClass("loaded");
-      });
-
-      $(function () {
-        /*************** Navigation *****************/
-
-        const tmMainNav = $("#tm-main-nav");
-
-        tmMainNav.singlePageNav({
-          filter: ":not(.external)",
-        });
-
-        $(".navbar-toggler").click(function (e) {
-          e.stopPropagation();
-          tmMainNav.toggleClass("show");
-        });
-
-        $("html").click(function (e) {
-          $("#tm-main-nav").removeClass("show");
-        });
-
-        /****************** Smooth Scrolling *****************/
-
-        $(".tm-btn-next").on("click", function (event) {
-          if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-
-            $("html, body").animate(
-              {
-                scrollTop: $(hash).offset().top,
-              },
-              800,
-              function () {
-                // window.location.hash = hash;
+      }),
+        $(function () {
+          const t = $("#tm-main-nav");
+          t.singlePageNav({ filter: ":not(.external)" }),
+            $(".navbar-toggler").click(function (a) {
+              a.stopPropagation(), t.toggleClass("show");
+            }),
+            $("html").click(function (t) {
+              $("#tm-main-nav").removeClass("show");
+            }),
+            $(".tm-btn-next").on("click", function (t) {
+              if ("" !== this.hash) {
+                t.preventDefault();
+                var a = this.hash;
+                $("html, body").animate(
+                  { scrollTop: $(a).offset().top },
+                  800,
+                  function () {}
+                );
               }
-            );
-          }
-        });
-
-        $(".tm-brand-icon").on("click", function (event) {
-          $("html, body").animate(
-            {
-              scrollTop: $("#intro").offset().top,
-            },
-            800
-          );
-        });
-
-        /****************** Gallery ******************/
-
-        const galleryItems = document.querySelector(".tm-gallery").children;
-        const itemsPerPage = 10;
-        const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
-        const pageAttribute = "data-page";
-
-        function setPagination(currentPage) {
-          for (let i = 1; i <= totalPages; i++) {
-            var $pager = "";
-
-            if (currentPage == i) {
-              $pager = $(
-                '<a href="javascript:void(0);" class="active tm-paging-link" ' +
-                  pageAttribute +
-                  '="' +
-                  i +
-                  '"></a>'
+            }),
+            $(".tm-brand-icon").on("click", function (t) {
+              $("html, body").animate(
+                { scrollTop: $("#intro").offset().top },
+                800
               );
-            } else {
-              $pager = $(
-                '<a href="javascript:void(0);" class="tm-paging-link" ' +
-                  pageAttribute +
-                  '="' +
-                  i +
-                  '"></a>'
-              );
-            }
-
-            $pager.html(i);
-
-            $pager.click(function () {
-              $(".tm-paging-link").removeClass("active");
-              $(this).addClass("active");
-              var page = $(this).eq(0).attr(pageAttribute);
-              showItems(page);
             });
-
-            $pager.appendTo($(".tm-paging"));
+          const a = document.querySelector(".tm-gallery").children,
+            n = 10,
+            i = Math.ceil(a.length / n),
+            e = "data-page";
+          function o(t) {
+            for (let i = 0; i < a.length; i++)
+              a[i].classList.remove("show"),
+                a[i].classList.add("hide"),
+                i >= t * n - n &&
+                  i < t * n &&
+                  (a[i].classList.remove("hide"), a[i].classList.add("show"));
           }
-        }
-
-        function showItems(currentPage) {
-          for (let i = 0; i < galleryItems.length; i++) {
-            galleryItems[i].classList.remove("show");
-            galleryItems[i].classList.add("hide");
-
-            if (
-              i >= currentPage * itemsPerPage - itemsPerPage &&
-              i < currentPage * itemsPerPage
-            ) {
-              galleryItems[i].classList.remove("hide");
-              galleryItems[i].classList.add("show");
+          !(function (t) {
+            for (let n = 1; n <= i; n++) {
+              var a = "";
+              (a =
+                t == n
+                  ? $(
+                      '<a href="javascript:void(0);" class="active tm-paging-link" ' +
+                        e +
+                        '="' +
+                        n +
+                        '"></a>'
+                    )
+                  : $(
+                      '<a href="javascript:void(0);" class="tm-paging-link" ' +
+                        e +
+                        '="' +
+                        n +
+                        '"></a>'
+                    )).html(n),
+                a.click(function () {
+                  $(".tm-paging-link").removeClass("active"),
+                    $(this).addClass("active"),
+                    o($(this).eq(0).attr(e));
+                }),
+                a.appendTo($(".tm-paging"));
             }
-          }
-        }
-
-        setPagination(1);
-        showItems(1);
-
-        /****************** Magnific Popup ***********/
-
-        $(".tm-gallery").magnificPopup({
-          delegate: "a",
-          type: "image",
-          gallery: {
-            enabled: true,
-          },
+          })(1),
+            o(1),
+            $(".tm-gallery").magnificPopup({
+              delegate: "a",
+              type: "image",
+              gallery: { enabled: !0 },
+            });
         });
-      });
     </script>
   </body>
 </html>
